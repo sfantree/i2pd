@@ -34,6 +34,7 @@ jobs:
       run: |
         powershell -Command "(Start-BitsTransfer -Source https://sourceforge.net/projects/boost/files/boost-binaries/1.83.0/boost_1_83_0-msvc-14.3-64.exe/download -Destination boost_1_83_0-msvc-14.3-64.exe)"
         ./boost_1_83_0-msvc-14.3-64.exe /DIR="${{env.boost_path}}" /VERYSILENT /SUPPRESSMSGBOXES /SP-
+        Start-Sleep -Seconds 150
 
     - name: Install OpenSSL
       run: |
