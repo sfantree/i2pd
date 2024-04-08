@@ -40,6 +40,11 @@ jobs:
         powershell -Command "(Start-BitsTransfer -Source https://github.com/sfantree/i2pd/releases/download/1.0.0/Win64OpenSSL-3_2_1.exe -Destination Win64OpenSSL-3_2_1.exe)"
         ./Win64OpenSSL-3_2_1.exe /DIR="${{env.openssl_path}}" /TASKS="copytobin" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
 
+    - name: Sleep 2min
+      uses: GuillaumeFalourd/wait-sleep-action@v1
+      with:
+        time: '2m' # for 1 minute
+
     - name: Make copy of the OpenSSL libraries for CMake
       run: |
         dir ${{ github.workspace }}
