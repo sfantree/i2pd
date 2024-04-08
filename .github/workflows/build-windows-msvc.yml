@@ -1,23 +1,7 @@
 name: Build on Windows with MSVC
 
 on:
-  push:
-    branches:
-    - '*'
-    paths:
-    - .github/workflows/build-windows-msvc.yml
-    - build/CMakeLists.txt
-    - build/cmake_modules/**
-    - daemon/**
-    - i18n/**
-    - libi2pd/**
-    - libi2pd_client/**
-    - Win32/**
-    tags:
-    - '*'
-  pull_request:
-    branches:
-    - '*'
+  workflow_dispatch:
 
 jobs:
   build:
